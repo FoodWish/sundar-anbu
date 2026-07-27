@@ -2,42 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#08080A" />
+
+    <title>Sundar Anbu — Forward Deployed Engineer</title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Forward Deployed Engineer based in Bengaluru. Full-stack (React, Node.js, TypeScript, Python) plus AI workflows. I embed with customers to scope, build and ship production systems end-to-end."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="author" content="Sundar Anbu" />
+    <link rel="canonical" href="https://sundaranbu.com/" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Sundar Anbu</title>
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sundaranbu.com/" />
+    <meta
+      property="og:title"
+      content="Sundar Anbu — Forward Deployed Engineer"
+    />
+    <meta
+      property="og:description"
+      content="I embed with customers, scope ambiguous problems, and ship production software that moves real metrics. 4+ years across healthcare, edtech and AI startups."
+    />
+    <meta
+      property="og:image"
+      content="https://storageforsundar.blob.core.windows.net/file1/sundar_anbu.jpg"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@sundaranbu_" />
+    <meta
+      name="twitter:title"
+      content="Sundar Anbu — Forward Deployed Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="I embed with customers, scope ambiguous problems, and ship production software that moves real metrics."
+    />
+    <meta
+      name="twitter:image"
+      content="https://storageforsundar.blob.core.windows.net/file1/sundar_anbu.jpg"
+    />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Warm the portrait, which is the hero's largest paint. -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://storageforsundar.blob.core.windows.net/file1/sundar_anbu.jpg"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sundar Anbu",
+        "url": "https://sundaranbu.com/",
+        "image": "https://storageforsundar.blob.core.windows.net/file1/sundar_anbu.jpg",
+        "jobTitle": "Forward Deployed Engineer",
+        "email": "mailto:sundaranbu18@gmail.com",
+        "worksFor": { "@type": "Organization", "name": "Wadhwani Foundation" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "alumniOf": [
+          { "@type": "Organization", "name": "Scaler" },
+          { "@type": "CollegeOrUniversity", "name": "Alagappa University" },
+          {
+            "@type": "Organization",
+            "name": "Nettur Technical Training Foundation"
+          }
+        ],
+        "knowsAbout": [
+          "React",
+          "Node.js",
+          "TypeScript",
+          "Python",
+          "PostgreSQL",
+          "MongoDB",
+          "Kubernetes",
+          "Large Language Models"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/sundaranbu/",
+          "https://github.com/sundaranbu18",
+          "https://x.com/sundaranbu_"
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

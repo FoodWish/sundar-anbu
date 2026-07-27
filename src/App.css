@@ -2,142 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --black-gradient: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
-  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the fixed nav never covers a heading. */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* A single visible focus treatment, in the accent, everywhere. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-canvas rounded-sm;
+  }
+
+  ::selection {
+    background: rgba(255, 176, 32, 0.25);
+    color: #fff;
+  }
 }
 
-* {
-  scroll-behavior: smooth;
+@layer components {
+  /* Hairline rule that fades out at both ends — used between sections. */
+  .rule-fade {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.12) 20%,
+      rgba(255, 255, 255, 0.12) 80%,
+      transparent
+    );
+  }
+
+  /* Small uppercase mono label that prefixes each section. */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-accent;
+  }
 }
 
-.hero-gradient {
-  background: linear-gradient(
-    97.86deg,
-    #a509ff 0%,
-    #34acc7 53.65%,
-    #a134c7 100%
-  );
-}
-
-.hero-gradient-2 {
-  background: linear-gradient(
-    90deg,
-    #a509ff 0%,
-    #34acc7 50%,
-    #a134c7 100%
-  );
-}
-
-.gradient-03 {
+/* Ambient glow behind the hero. Replaces the old full-bleed gradient wash:
+   one soft light source instead of three competing ones. */
+.hero-glow {
   position: absolute;
-  width: 404px;
-  height: 800px;
-  left: 20%;
-  top: 5%;
-
-  background: rgba(149, 66, 232, 0.35);
-  filter: blur(175px);
-  transform: rotate(-114.2deg);
-}
-
-.gradient-04 {
-  position: absolute;
-  width: 304px;
-  height: 100vh;
-  left: 30%;
-  top: 10%;
-
-  background: rgba(45, 72, 152, 0.75);
-  filter: blur(200px);
-  transform: rotate(-53.13deg);
-}
-
-.gradient-05 {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0) 100%
+  top: -10%;
+  left: 50%;
+  width: min(900px, 110vw);
+  height: min(900px, 110vw);
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 176, 32, 0.09) 0%,
+    rgba(255, 176, 32, 0.03) 35%,
+    transparent 68%
   );
+  pointer-events: none;
 }
 
-.feedback-gradient {
-  position: absolute;
-  width: 200px;
-  height: 316px;
-  left: 0px;
-  top: 0px;
-
-  background: #8d39a3;
-  filter: blur(175px);
+/* Faint grid, keeps large dark areas from reading as flat emptiness. */
+.grid-lines {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 100% 60% at 50% 0%,
+    #000 40%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
-.footer-gradient {
-  position: absolute;
-  width: 500px;
-  height: 100px;
-  left: 37%;
-  bottom: 0;
-
-  background: #65c4fa;
-  filter: blur(150px);
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-img-container {
+.portrait-ring {
   position: relative;
-  width: 100%;
-  height: 100%;
+  border-radius: 9999px;
   overflow: hidden;
-  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 176, 32, 0.22),
+    0 0 0 10px rgba(255, 176, 32, 0.04), 0 30px 80px -20px rgba(0, 0, 0, 0.9);
 }
 
-.hero-img-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(165, 9, 255, 0.2),
-    rgba(52, 172, 199, 0.2),
-    rgba(161, 52, 199, 0.2)
-  );
-  z-index: 1;
-  border-radius: 50%;
+.portrait-ring img {
+  filter: saturate(0.92) contrast(1.03);
 }
 
-.hero-img-container img {
-  position: relative;
-  z-index: 0;
-}
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #08080a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
+  background: #26262e;
+  border-radius: 999px;
+  border: 3px solid #08080a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #38383f;
+}
+
+/* Respect the OS setting: kill transforms and animation for anyone who asked. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
