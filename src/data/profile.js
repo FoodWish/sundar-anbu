@@ -1,5 +1,4 @@
-// Single source of truth for every piece of copy on the site.
-// Mirrors linkedin.com/in/sundaranbu — update here, not in the components.
+
 
 export const profile = {
   name: "Sundar Anbu",
