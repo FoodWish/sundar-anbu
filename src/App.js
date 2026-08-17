@@ -6,7 +6,6 @@ import Experience from "./components/Experience";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ChatbotWidget from "./components/ChatbotWidget";
 import "./App.css";
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
       </main>
 
       <Footer />
-      <ChatbotWidget />
     </div>
   );
 }
