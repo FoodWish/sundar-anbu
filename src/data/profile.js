@@ -10,10 +10,8 @@ export const profile = {
     "I embed with customers, scope ambiguous problems, and ship production software that moves real metrics.",
   summary:
     "Over 4+ years I've owned products end-to-end — from the first customer conversation to deployed, maintained systems — across healthcare, edtech, and AI startups. I've built directly for clients like Blooming Health (a health-resource platform for Maryland) and a U.S. healthcare provider (HIPAA-compliant patient management), turning messy requirements into reliable software. I move fast, care about clean architecture, and thrive in ambiguity where the goal is customer outcomes, not just shipped code.",
-  resumeUrl:
-    "https://storageforsundar.blob.core.windows.net/file1/Sundar%20Anbu%20(2).pdf",
-  portraitUrl:
-    "https://storageforsundar.blob.core.windows.net/file1/sundar_anbu.jpg",
+  resumeUrl: "/Sundar_Anbu.pdf",
+  portraitUrl: "/1715242287369.jpeg",
 };
 
 export const stats = [
